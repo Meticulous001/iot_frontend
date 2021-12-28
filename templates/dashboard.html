@@ -10,14 +10,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Fully featured and complete ICO Dashboard template for ICO backend management.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 	<!-- Site Title  -->
 	<title>Green IoT - ICO User Dashboard Admin</title>
 	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor.bundle.css') }}">
 	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="assets/css/style.css">
-	<script src='index.js' defer></script>
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <script src="{{ url_for('static', filename='assets/js/index.js') }}" defer></script>
 </head>
 
 <body class="page-user">
@@ -38,8 +38,8 @@
                             </a>
                         </li><!-- .topbar-nav-item -->
                     </ul><!-- .topbar-nav -->
-                    <a class="topbar-logo" href="index.html">
-                       <img src="images/logo-light-sm.png" alt="logo"> 
+                    <a class="topbar-logo" href="\dashboard">
+                       <img src="{{ url_for('static', filename='images/logo-light-sm.png') }}" alt="logo">
                        <span class="user-welcome d-none d-lg-inline-block"> Green IoT </span>
                     </a>
                     <ul class="topbar-nav">
@@ -52,12 +52,12 @@
                                     <div class="user-status-balance">Admin <small>admin</small></div>
                                 </div>
                                 <ul class="user-links">
-                                    <li><a href="profile.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                    <li><a href="\profile"><i class="ti ti-id-badge"></i>My Profile</a></li>
                                     <!-- <li><a href="#"><i class="ti ti-infinite"></i>Referral</a></li> -->
-                                    <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
+                                    <li><a href="\activity"><i class="ti ti-eye"></i>Activity</a></li>
                                 </ul>
                                 <ul class="user-links bg-light">
-                                    <li><a href="sign-in.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                    <li><a href="\sign-in"><i class="ti ti-power-off"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </li><!-- .topbar-nav-item -->
@@ -69,11 +69,11 @@
             <div class="container">
                 <div class="navbar-innr">
                     <ul class="navbar-menu">
-                        <li><a href="dashboard.html"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
-                        <li><a href="preference.html"><em class="ikon ikon-coins"></em> Preference</a></li>
+                        <li><a href="/dashboard"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
+                        <li><a href="/preference"><em class="ikon ikon-coins"></em> Preference</a></li>
                         <!-- <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> ICO Distribution</a></li> -->
-                        <li><a href="classroom.html"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
-                        <li><a href="profile.html"><em class="ikon ikon-user"></em> Profile</a></li>
+                        <li><a href="/classroom"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
+                        <li><a href="/profile"><em class="ikon ikon-user"></em> Profile</a></li>
                         
                         <!--  -->
                     </ul>
@@ -90,36 +90,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <!-- <div class="token-statistics card card-token height-auto">
-                        <div class="card-innr">
-                            <div class="token-balance token-balance-with-icon">
-                                <div class="token-balance-icon">
-                                    <img src="images/logo-light-sm.png" alt="logo">
-                                </div>
-                                <div class="token-balance-text">
-                                    <h6 class="card-sub-title">Tokens Balance</h6>
-                                    <span class="lead">120,000,000 <span>TWZ</span></span>
-                                </div>
-                            </div>
-                            <div class="token-balance token-balance-s2">
-                                <h6 class="card-sub-title">Your Contribution</h6>
-                                <ul class="token-balance-list">
-                                    <li class="token-balance-sub">
-                                        <span class="lead">2.646</span>
-                                        <span class="sub">ETH</span>
-                                    </li>
-                                    <li class="token-balance-sub">
-                                        <span class="lead">1.265</span>
-                                        <span class="sub">BTC</span>
-                                    </li>
-                                    <li class="token-balance-sub">
-                                        <span class="lead">6.506</span>
-                                        <span class="sub">LTC</span>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div> -->
+
                 </div><!-- .col -->
                 <!-- <div class="col-lg-8">
                     <div class="token-information card card-full-height">
@@ -248,6 +219,16 @@
                         </div>
                     </div>
                 </div>
+                <div>
+                    <table class="table tnx-table" id="room-tbl">
+                        <tr id="room-tbl-header">
+                            <thead>Room Number</thead>
+                            <thead>CO2</thead>
+                            <thead>Humidity</thead>
+                        </tr>
+
+                    </table>
+                </div>
                <!--  <div class="col-xl-4 col-lg-5">
                     <div class="token-calculator card card-full-height">
                         <div class="card-innr">
@@ -346,8 +327,8 @@
                 <div class="col-md-8">
                     <ul class="footer-links">
                         <!-- <li><a href="#">Whitepaper</a></li> -->
-                        <li><a href="faq-page.html">API Documentation</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="/api/docs">API Documentation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                         <!-- <li><a href="regular-page.html">Terms of Condition</a></li> -->
                     </ul>
                 </div><!-- .col -->
@@ -371,14 +352,26 @@
     </div><!-- .footer-bar -->
 
 	<!-- JavaScript (include all script here) -->
-	<script src="assets/js/jquery.bundle.js?ver=104"></script>
-	<script src="assets/js/script.js?ver=104"></script>
-       <script type="text/javascript" src="index.js"></script>
+    <script src="{{ url_for('static', filename='assets/js/jquery.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/fetch.js') }}"></script>
 </body>
 
 <script>
-    $(document).ready(function(){
-   $("#example").text();
-});
+$(document).ready(function() {
+    $.getJSON('rooms', function (data) {
+        data.result.forEach(e => {
+           $('#room-tbl').find('#room-tbl-header').append(`
+                <tr>
+                    <td>${e.number} </td>
+                    <td>${e.co2} &nbsp;</td>
+                    <td>${e.humidity} </td>
+                </tr>
+           `);
+        });
+    });
+})
 </script>
 </html>
+
+

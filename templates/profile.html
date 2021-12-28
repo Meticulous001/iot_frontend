@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="zxx" class="js">
+<html lang="en" class="js">
+<html lang="fr" class="js">
+
+
 <head>
 	<meta charset="utf-8">
 	<meta name="author" content="Softnio">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Fully featured and complete ICO Dashboard template for ICO backend management.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 	<!-- Site Title  -->
-	<title>Green IoT - User Profile</title>
+	<title>Green IoT - ICO User Dashboard Admin</title>
 	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor.bundle.css') }}">
 	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="assets/css/style.css?ver=104">
-	
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <script src="{{ url_for('static', filename='assets/js/index.js') }}" defer></script>
 </head>
 
 <body class="page-user">
-   
+
     <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
@@ -34,26 +38,26 @@
                             </a>
                         </li><!-- .topbar-nav-item -->
                     </ul><!-- .topbar-nav -->
-                    <a class="topbar-logo" href="index.html">
-                       <img src="images/logo-light-sm.png" alt="logo"> 
+                    <a class="topbar-logo" href="\dashboard">
+                       <img src="{{ url_for('static', filename='images/logo-light-sm.png') }}" alt="logo">
                        <span class="user-welcome d-none d-lg-inline-block"> Green IoT </span>
                     </a>
                     <ul class="topbar-nav">
                         <li class="topbar-nav-item relative">
-                            <span class="user-welcome d-none d-lg-inline-block">Welcome! Stefan Harary</span>
+                            <span class="user-welcome d-none d-lg-inline-block">Welcome! Admin</span>
                             <a class="toggle-tigger user-thumb" href="#"><em class="ti ti-user"></em></a>
                             <div class="toggle-class dropdown-content dropdown-content-right dropdown-arrow-right user-dropdown">
                                 <div class="user-status">
-                                    <h6 class="user-status-title">Token balance</h6>
-                                    <div class="user-status-balance">12,000,000 <small>TWZ</small></div>
+                                    <h6 class="user-status-title">Role</h6>
+                                    <div class="user-status-balance">Admin <small>admin</small></div>
                                 </div>
                                 <ul class="user-links">
-                                    <li><a href="profile.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
-                                    <li><a href="#"><i class="ti ti-infinite"></i>Referral</a></li>
-                                    <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
+                                    <li><a href="\profile"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                    <!-- <li><a href="#"><i class="ti ti-infinite"></i>Referral</a></li> -->
+                                    <li><a href="\activity"><i class="ti ti-eye"></i>Activity</a></li>
                                 </ul>
                                 <ul class="user-links bg-light">
-                                    <li><a href="sign-in.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                    <li><a href="\sign_in"><i class="ti ti-power-off"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </li><!-- .topbar-nav-item -->
@@ -65,18 +69,18 @@
             <div class="container">
                 <div class="navbar-innr">
                     <ul class="navbar-menu">
-                        <li><a href="dashboard.html"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
-                        <li><a href="preference.html"><em class="ikon ikon-coins"></em> Preference</a></li>
-                        
-                        <li><a href="classroom.html"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
-                        <li><a href="profile.html"><em class="ikon ikon-user"></em> Profile</a></li>
+                        <li><a href="/dashboard"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
+                        <li><a href="/preference"><em class="ikon ikon-coins"></em> Preference</a></li>
+                        <!-- <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> ICO Distribution</a></li> -->
+                        <li><a href="/classroom"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
+                        <li><a href="/profile"><em class="ikon ikon-user"></em> Profile</a></li>
                         
                         <!--  -->
                     </ul>
-                    <!-- <ul class="navbar-btns">
-                        <li><a href="kyc-application.html" class="btn btn-sm btn-outline btn-light"><em class="text-primary ti ti-files"></em><span>KYC Application</span></a></li>
+                     <ul class="navbar-btns">
+                        <li><a href="\kyc-application" class="btn btn-sm btn-outline btn-light"><em class="text-primary ti ti-files"></em><span>KYC Application</span></a></li>
                         <li class="d-none"><span class="badge badge-outline badge-success badge-lg"><em class="text-success ti ti-files mgr-1x"></em><span class="text-success">KYC Approved</span></span></li>
-                    </ul> -->
+                    </ul>
                 </div><!-- .navbar-innr -->
             </div><!-- .container -->
         </div><!-- .navbar -->
@@ -284,8 +288,8 @@
                 <div class="col-md-8">
                     <ul class="footer-links">
                         <!-- <li><a href="#">Whitepaper</a></li> -->
-                        <li><a href="faq-page.html">API Documentation</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="/api/docs">API Documentation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                         <!-- <li><a href="regular-page.html">Terms of Condition</a></li> -->
                     </ul>
                 </div><!-- .col -->
@@ -352,7 +356,8 @@
     
     
 	<!-- JavaScript (include all script here) -->
-	<script src="assets/js/jquery.bundle.js?ver=104"></script>
-	<script src="assets/js/script.js?ver=104"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/fetch.js') }}"></script>
 </body>
 </html>

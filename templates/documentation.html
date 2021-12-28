@@ -5,23 +5,23 @@
 
 
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Softnio">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Fully featured and complete ICO Dashboard template for ICO backend management.">
-    <!-- Fav Icon  -->
-    <link rel="shortcut icon" href="images/favicon.png">
-    <!-- Site Title  -->
-    <title>Green IoT - ICO User Dashboard Admin</title>
-    <!-- Vendor Bundle CSS -->
-    <link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src='index.js' defer></script>
+	<meta charset="utf-8">
+	<meta name="author" content="Softnio">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Fully featured and complete ICO Dashboard template for ICO backend management.">
+	<!-- Fav Icon  -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+	<!-- Site Title  -->
+	<title>Green IoT - ICO User Dashboard Admin</title>
+	<!-- Vendor Bundle CSS -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/vendor.bundle.css') }}">
+	<!-- Custom styles for this template -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css') }}">
+    <script src="{{ url_for('static', filename='assets/js/index.js') }}" defer></script>
 </head>
 
 <body class="page-user">
-   
+
     <div class="topbar-wrap">
         <div class="topbar is-sticky">
             <div class="container">
@@ -38,8 +38,8 @@
                             </a>
                         </li><!-- .topbar-nav-item -->
                     </ul><!-- .topbar-nav -->
-                    <a class="topbar-logo" href="index.html">
-                       <img src="images/logo-light-sm.png" alt="logo"> 
+                    <a class="topbar-logo" href="\dashboard">
+                       <img src="{{ url_for('static', filename='images/logo-light-sm.png') }}" alt="logo">
                        <span class="user-welcome d-none d-lg-inline-block"> Green IoT </span>
                     </a>
                     <ul class="topbar-nav">
@@ -52,12 +52,12 @@
                                     <div class="user-status-balance">Admin <small>admin</small></div>
                                 </div>
                                 <ul class="user-links">
-                                    <li><a href="profile.html"><i class="ti ti-id-badge"></i>My Profile</a></li>
+                                    <li><a href="\profile"><i class="ti ti-id-badge"></i>My Profile</a></li>
                                     <!-- <li><a href="#"><i class="ti ti-infinite"></i>Referral</a></li> -->
                                     <li><a href="activity.html"><i class="ti ti-eye"></i>Activity</a></li>
                                 </ul>
                                 <ul class="user-links bg-light">
-                                    <li><a href="sign-in.html"><i class="ti ti-power-off"></i>Logout</a></li>
+                                    <li><a href="\sign-in"><i class="ti ti-power-off"></i>Logout</a></li>
                                 </ul>
                             </div>
                         </li><!-- .topbar-nav-item -->
@@ -69,11 +69,11 @@
             <div class="container">
                 <div class="navbar-innr">
                     <ul class="navbar-menu">
-                        <li><a href="index.html"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
-                        <li><a href="buy-token.html"><em class="ikon ikon-coins"></em> Preference</a></li>
-                        <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> ICO Distribution</a></li>
-                        <li><a href="transactions.html"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
-                        <li><a href="profile.html"><em class="ikon ikon-user"></em> Profile</a></li>
+                        <li><a href="/dashboard"><em class="ikon ikon-dashboard"></em> Dashboard</a></li>
+                        <li><a href="/preference"><em class="ikon ikon-coins"></em> Preference</a></li>
+                        <!-- <li><a href="ico-distribution.html"><em class="ikon ikon-distribution"></em> ICO Distribution</a></li> -->
+                        <li><a href="/classroom"><em class="ikon ikon-transactions"></em> Classroom Details</a></li>
+                        <li><a href="/profile"><em class="ikon ikon-user"></em> Profile</a></li>
                         
                         <!--  -->
                     </ul>
@@ -263,8 +263,8 @@
                 <div class="col-md-8">
                     <ul class="footer-links">
                         <!-- <li><a href="#">Whitepaper</a></li> -->
-                        <li><a href="faq-page.html">API Documentation</a></li>
-                        <li><a href="regular-page.html">Privacy Policy</a></li>
+                        <li><a href="\documentation">API Documentation</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
                         <!-- <li><a href="regular-page.html">Terms of Condition</a></li> -->
                     </ul>
                 </div><!-- .col -->
@@ -288,7 +288,8 @@
     </div><!-- .footer-bar -->
 
 	<!-- JavaScript (include all script here) -->
-	<script src="assets/js/jquery.bundle.js?ver=104"></script>
-	<script src="assets/js/script.js?ver=104"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.bundle.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/fetch.js') }}"></script>
 </body>
 </html>

@@ -2,17 +2,21 @@
 <html lang="zxx" class="js">
 <head>
 	<meta charset="utf-8">
-	<meta name="author" content="Softnio">
+	<meta name="author" content="IoT Project">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Green IoT Project - GENIAL.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="images/favicon.png">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
 	<!-- Site Title  -->
 	<title>Green IoT | Sign in</title>
 	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">
+<!--	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">-->
+    <link href="{{ url_for('static', filename='assets/css/vendor.bundle.css') }}" rel="stylesheet" />
+
 	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="assets/css/style.css?ver=104">
+<!--	<link rel="stylesheet" href="assets/css/style.css?ver=104">-->
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" />
+
 	
 </head>
 
@@ -21,11 +25,11 @@
     <div class="page-ath-wrap">
         <div class="page-ath-content">
             <div class="page-ath-header">
-                <a href="sign-in.html" class="page-ath-logo"><img src="images/logo.png" srcset="images/logo2x.png 2x" alt="logo">Green IoT</a>
+                <a href="sign-in.html" class="page-ath-logo"><img src="{{ url_for('static', filename='images/logo.png') }}" srcset="images/logo2x.png 2x" alt="logo">Green IoT</a>
             </div>
             <div class="page-ath-form">
                 <h2 class="page-ath-heading">Sign in <small>with your TokenWiz Account</small></h2>
-                <form action="dashboard.html">
+                <form action="/dashboard">
                     <div class="input-item">
                         <input type="text" placeholder="Your Email" class="input-bordered">
                     </div>
@@ -53,7 +57,7 @@
                 <div class="gaps-2x"></div>
                 <div class="gaps-2x"></div>
                 <div class="form-note">
-                    Don’t have an account? <a href="sign-up.html"> <strong>Sign up here</strong></a>
+                    Don’t have an account? <a href="/sign-up"> <strong>Sign up here</strong></a>
                 </div>
             </div>
             <div class="page-ath-footer">
@@ -67,14 +71,15 @@
         <div class="page-ath-gfx">
            <div class="w-100 d-flex justify-content-center">
                <div class="col-md-8 col-xl-5">
-                   <img src="images/ath-gfx.png" alt="image">
+                   <img src="{{ url_for('static', filename='images/ath-gfx.png') }}" alt="image">
                </div>
            </div>            
         </div>
     </div>
 
 	<!-- JavaScript (include all script here) -->
-	<script src="assets/js/jquery.bundle.js?ver=104"></script>
-	<script src="assets/js/script.js?ver=104"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.bundle.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
+
 </body>
 </html>

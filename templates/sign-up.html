@@ -6,14 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="Fully featured and complete ICO Dashboard template for ICO backend management.">
 	<!-- Fav Icon  -->
-	<link rel="shortcut icon" href="images/favicon.png">
-	<!-- Site Title  -->
+<!--	<link rel="shortcut icon" href="images/favicon.png">-->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='images/favicon.png') }}">
+    <!-- Site Title  -->
+
 	<title>Green IoT | Signup</title>
 	<!-- Vendor Bundle CSS -->
-	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">
-	<!-- Custom styles for this template -->
-	<link rel="stylesheet" href="assets/css/style.css?ver=104">
-	
+<!--	<link rel="stylesheet" href="assets/css/vendor.bundle.css?ver=104">-->
+<!--	&lt;!&ndash; Custom styles for this template &ndash;&gt;-->
+<!--	<link rel="stylesheet" href="assets/css/style.css?ver=104">-->
+<!--	-->
+     <link href="{{ url_for('static', filename='assets/css/vendor.bundle.css') }}" rel="stylesheet" />
+
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" />
+
 </head>
 
 <body class="page-ath">
@@ -21,11 +27,11 @@
     <div class="page-ath-wrap">
         <div class="page-ath-content">
             <div class="page-ath-header">
-                <a href="sign-in.html" class="page-ath-logo"><img src="images/logo.png" srcset="images/logo2x.png 2x" alt="logo">Green IoT</a>
+                <a href="sign-in.html" class="page-ath-logo"><img src="{{ url_for('static', filename='images/logo.png') }}" srcset="images/logo2x.png 2x" alt="logo">Green IoT</a>
             </div>
             <div class="page-ath-form">
                 <h2 class="page-ath-heading">Sign up <small>Create New Account</small></h2>
-                <form action="signup-success.html" enctype="multipart/form-data">
+                <form action="/signup-success.html" enctype="multipart/form-data">
                     <div class="input-item">
                         <input type="text" placeholder="Your Name" class="input-bordered">
                     </div>
@@ -64,8 +70,8 @@
             </div>
             <div class="page-ath-footer">
                 <ul class="footer-links">
-                    <li><a href="regular-page.html">Privacy Policy</a></li>
-                    <li><a href="regular-page.html">Terms</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms</a></li>
                     <li>&copy; 2021 Green IoT.</li>
                 </ul>
             </div>
@@ -73,14 +79,14 @@
         <div class="page-ath-gfx">
            <div class="w-100 d-flex justify-content-center">
                <div class="col-md-8 col-xl-5">
-                   <img src="images/ath-gfx.png" alt="image">
+                   <img src="{{ url_for('static', filename='images/ath-gfx.png') }}" alt="image">
                </div>
            </div>            
         </div>
     </div>
 
 	<!-- JavaScript (include all script here) -->
-	<script src="assets/js/jquery.bundle.js?ver=104"></script>
-	<script src="assets/js/script.js?ver=104"></script>
+	<script src="{{ url_for('static', filename='assets/js/jquery.bundle.js') }}"></script>
+	<script src="{{ url_for('static', filename='assets/js/script.js') }}"></script>
 </body>
 </html>
